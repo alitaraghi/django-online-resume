@@ -128,7 +128,13 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
 
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+
+env_allowed_hosts = os.environ.get("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+
+ALLOWED_HOSTS = env_allowed_hosts + [
+    "django-online-resume-production.up.railway.app",
+]
+
 
 CSRF_TRUSTED_ORIGINS = [
     "https://django-online-resume-production.up.railway.app",
