@@ -35,27 +35,29 @@
     </div>
   </section>
 
-  <section id="skills" class="section section-alt">
+<section id="skills" class="section section-alt">
   <div class="container">
     <h2>Skills</h2>
     <div class="skills-grid">
       {% for category, items in skills_by_category.items %}
-        {% for skill in items %}
-          {% if forloop.first %}
-            <div class="skill-card">
-              <h3>{{ category }}</h3>
-              <p>
-          {% endif %}
-          {{ skill.name }}{% if not forloop.last %}, {% endif %}
-          {% if forloop.last %}
-              </p>
-            </div>
-          {% endif %}
-        {% endfor %}
+        <div class="skill-card">
+          <h3>{{ category }}</h3>
+          <ul class="skill-list">
+            {% for skill in items %}
+              <li>
+                <strong>{{ skill.name }}</strong>
+                {% if skill.description %}
+                  – {{ skill.description }}
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
       {% endfor %}
     </div>
   </div>
 </section>
+
 
   <section id="projects" class="section">
   <div class="container">

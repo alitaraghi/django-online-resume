@@ -12,6 +12,11 @@ class Skill(models.Model):
     name = models.CharField(max_length=100)
     category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
     order = models.PositiveIntegerField(default=0)
+    description = models.CharField(
+        max_length=255,
+        blank=True,
+        help_text="Short English description for this skill",
+    )
 
     class Meta:
         ordering = ["category", "order", "name"]
