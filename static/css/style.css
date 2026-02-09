@@ -2,7 +2,7 @@
   /* Dark tech theme */
   --bg: #020617;          /* overall background */
   --bg-alt: #020617;      /* section alt (kept same for full dark) */
-  --card-bg: #0b1220;     /* cards / panels */
+ --card-bg: #0b1220;   /* cards / panels */
   --text-main: #e5e7eb;   /* main text */
   --text-muted: #cbd5f5;  /* secondary text */
   --border-subtle: #1f2937;
@@ -78,10 +78,11 @@ body {
 }
 
 .section-alt {
-  background-color: #020617;
+  background-color: var(--bg-alt);
   border-top: 1px solid var(--border-subtle);
   border-bottom: 1px solid var(--border-subtle);
 }
+
 
 .section h2 {
   font-size: 1.8rem;
@@ -146,7 +147,7 @@ body {
 /* Cards */
 .skill-card,
 .project-card {
-  background: radial-gradient(circle at top left, #111827, #020617);
+  background-color: var(--card-bg);
   border-radius: 0.75rem;
   padding: 1.25rem 1.5rem;
   border: 1px solid var(--border-subtle);
@@ -157,7 +158,7 @@ body {
 .skill-card:hover,
 .project-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.8);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.4);
   border-color: rgba(34, 211, 238, 0.4);
 }
 
