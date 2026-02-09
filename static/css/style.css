@@ -58,13 +58,14 @@ body {
   font-size: 1rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--text-main);
+  color: #f9fafb; /* همیشه روشن */
 }
+
 
 .nav a {
   margin-left: 1rem;
   text-decoration: none;
-  color: var(--text-main);
+  color: #e5e7eb;  /* روشن */
   font-size: 0.95rem;
 }
 
