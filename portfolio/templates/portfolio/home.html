@@ -1,6 +1,6 @@
 {% extends "portfolio/base.html" %} {% block title %}{{ name }} | Online
 Resume{% endblock %} {% block content %}
-<section class="hero py-5 bg-light">
+<section class="hero py-5">
   <div class="container hero-content">
     <div class="col-lg-8 px-0">
       <p class="hero-tagline text-uppercase fw-semibold text-primary mb-2">
@@ -14,9 +14,10 @@ Resume{% endblock %} {% block content %}
         turning complex ideas into clear, working software.
       </p>
       <div class="hero-actions d-flex flex-wrap gap-2">
-        <a href="#projects" class="btn btn-primary">View Projects</a>
-        <a href="#contact" class="btn btn-outline-primary">Contact Me</a>
-      </div>
+  <a href="#projects" class="btn btn-primary btn-lg rounded-pill">View Projects</a>
+  <a href="#contact" class="btn btn-outline-info btn-lg rounded-pill">Contact Me</a>
+</div>
+
     </div>
   </div>
 </section>
@@ -70,17 +71,18 @@ Resume{% endblock %} {% block content %}
                 {% if forloop.counter == 1 %}Live now{% else %}In progress{% endif %}
               </span>
               <div class="d-flex flex-wrap gap-2">
-                {% if project.github_url %}
-                  <a href="{{ project.github_url }}" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener noreferrer">
-                    GitHub
-                  </a>
-                {% endif %}
-                {% if project.live_url %}
-                  <a href="{{ project.live_url }}" class="btn btn-sm btn-primary" target="_blank" rel="noopener noreferrer">
-                    Live
-                  </a>
-                {% endif %}
-              </div>
+  {% if project.github_url %}
+    <a href="{{ project.github_url }}" class="btn btn-sm btn-outline-info rounded-pill" target="_blank" rel="noopener noreferrer">
+      GitHub
+    </a>
+  {% endif %}
+  {% if project.live_url %}
+    <a href="{{ project.live_url }}" class="btn btn-sm btn-info text-dark rounded-pill" target="_blank" rel="noopener noreferrer">
+      Live
+    </a>
+  {% endif %}
+</div>
+
             </div>
           </article>
         </div>

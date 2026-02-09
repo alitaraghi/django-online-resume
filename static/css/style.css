@@ -4,7 +4,7 @@
   --bg-alt: #020617;      /* section alt (kept same for full dark) */
   --card-bg: #0b1220;     /* cards / panels */
   --text-main: #e5e7eb;   /* main text */
-  --text-muted: #9ca3af;  /* secondary text */
+  --text-muted: #cbd5f5;  /* secondary text */
   --border-subtle: #1f2937;
   --accent: #22d3ee;      /* cyan accent */
   --accent-soft: rgba(34, 211, 238, 0.15);
@@ -137,37 +137,7 @@ body {
 }
 
 /* Buttons – custom look, works with Bootstrap btns too */
-.btn-primary,
-.btn-secondary {
-  display: inline-block;
-  padding: 0.6rem 1.4rem;
-  border-radius: 999px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  border: 1px solid transparent;
-}
 
-.btn-primary {
-  background: radial-gradient(circle at top left, #38bdf8, #0ea5e9);
-  color: #0b1120;
-  border-color: transparent;
-}
-
-.btn-primary:hover {
-  filter: brightness(1.1);
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: var(--accent);
-  border-color: var(--accent-soft);
-}
-
-.btn-secondary:hover {
-  background-color: var(--accent-soft);
-}
 
 /* Grids */
 .skills-grid,
