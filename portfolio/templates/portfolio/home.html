@@ -3,18 +3,18 @@
 {% block title %}{{ name }} | Online Resume{% endblock %}
 
 {% block content %}
-  <section class="hero py-5">
+  <section class="hero py-5 bg-light">
   <div class="container hero-content">
-    <div>
-      <p class="hero-tagline text-uppercase fw-semibold text-primary">Python Developer</p>
+    <div class="col-lg-8 px-0">
+      <p class="hero-tagline text-uppercase fw-semibold text-primary mb-2">Python & Django Developer</p>
       <h1 class="mb-2">{{ name }}</h1>
       <p class="hero-subtitle mb-3">
         {{ title }}
       </p>
-      <p class="hero-text mb-4">
-        I am a Python and Django developer with experience in building real‑world web applications,
-        automation scripts, and AI‑powered tools. I enjoy turning ideas into working software and I am
-        actively growing my skills through practical projects.
+      <p class="hero-text mb-4 text-muted">
+        I build web applications with Django, automate workflows with Python and Selenium,
+        and explore how AI can solve real-world problems. I enjoy turning complex ideas into
+        clear, working software.
       </p>
       <div class="hero-actions d-flex flex-wrap gap-2">
         <a href="#projects" class="btn btn-primary">View Projects</a>
@@ -23,6 +23,7 @@
     </div>
   </div>
 </section>
+
 
 
   <section id="about" class="section">
@@ -97,15 +98,16 @@
 </section>
 
 
-  <section id="contact" class="section section-alt">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>If you would like to get in touch, feel free to contact me.</p>
-      <ul class="contact-list">
-        <li><strong>Email:</strong> <a href="mailto:taraghikon@gmail.com">taraghikon@gmail.com</a></li>
-        <li><strong>GitHub:</strong> <a href="https://github.com/alitaraghi" target="_blank" rel="noopener noreferrer">github.com/alitaraghi</a></li>
-        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ali-taraghi/" target="_blank" rel="noopener noreferrer">linkedin.com/in/ali-taraghi</a></li>
-      </ul>
-    </div>
-  </section>
+ <section id="contact" class="section section-alt">
+  <div class="container">
+    <h2>Contact</h2>
+    <p class="text-muted mb-3">If you would like to get in touch, feel free to contact me.</p>
+    <ul class="contact-list list-unstyled">
+      <li><strong>Email:</strong> <a href="mailto:taraghikon@gmail.com">taraghikon@gmail.com</a></li>
+      <li><strong>GitHub:</strong> <a href="https://github.com/alitaraghi" target="_blank" rel="noopener noreferrer">github.com/alitaraghi</a></li>
+      <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ali-taraghi/" target="_blank" rel="noopener noreferrer">linkedin.com/in/ali-taraghi</a></li>
+    </ul>
+  </div>
+</section>
+
 {% endblock %}
