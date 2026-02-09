@@ -32,6 +32,10 @@
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
+      
+    <button id="theme-toggle" class="btn btn-sm btn-outline-light">
+      Toggle theme
+    </button>
     </div>
   </header>
 
@@ -47,6 +51,26 @@
   integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
   crossorigin="anonymous"
 ></script>
+<script>
+  (function () {
+    const body = document.body;
+    const toggle = document.getElementById("theme-toggle");
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    if (savedTheme === "light") {
+      body.classList.add("theme-light");
+    }
+
+    if (toggle) {
+      toggle.addEventListener("click", function () {
+        body.classList.toggle("theme-light");
+        const isLight = body.classList.contains("theme-light");
+        localStorage.setItem("theme", isLight ? "light" : "dark");
+      });
+    }
+  })();
+</script>
 
 </body>
 </html>

@@ -1,11 +1,13 @@
 :root {
-  --bg: #f5f5f7;
-  --bg-alt: #ffffff;
-  --text-main: #111827;
-  --text-muted: #4b5563;
-  --border-subtle: #e5e7eb;
-  --accent: #2563eb;
-  --accent-soft: #dbeafe;
+  /* Dark tech theme */
+  --bg: #020617;          /* overall background */
+  --bg-alt: #020617;      /* section alt (kept same for full dark) */
+  --card-bg: #0b1220;     /* cards / panels */
+  --text-main: #e5e7eb;   /* main text */
+  --text-muted: #9ca3af;  /* secondary text */
+  --border-subtle: #1f2937;
+  --accent: #22d3ee;      /* cyan accent */
+  --accent-soft: rgba(34, 211, 238, 0.15);
 }
 
 /* Global reset */
@@ -22,6 +24,7 @@ body {
   background-color: var(--bg);
   color: var(--text-main);
   line-height: 1.6;
+  font-size: 16px;
 }
 
 /* Layout */
@@ -37,10 +40,10 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
-  background-color: rgba(245, 245, 247, 0.96);
+  background-color: rgba(2, 6, 23, 0.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-subtle);
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.6);
 }
 
 .site-header .container {
@@ -55,6 +58,7 @@ body {
   font-size: 1rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: var(--text-main);
 }
 
 .nav a {
@@ -74,18 +78,19 @@ body {
 }
 
 .section-alt {
-  background-color: var(--bg-alt);
+  background-color: #020617;
   border-top: 1px solid var(--border-subtle);
   border-bottom: 1px solid var(--border-subtle);
 }
 
 .section h2 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   margin-bottom: 1rem;
 }
 
 .section p {
   color: var(--text-muted);
+   font-size: 0.95rem;
 }
 
 /* Hero */
@@ -108,8 +113,8 @@ body {
 }
 
 .hero h1 {
-  font-size: 2.2rem;
-  margin: 0 0 0.5rem;
+  font-size: 2.6rem;
+  margin: 0 0 0.6rem;
 }
 
 .hero-subtitle {
@@ -122,6 +127,7 @@ body {
 .hero-text {
   max-width: 36rem;
   margin-bottom: 1.5rem;
+  color: var(--text-muted);
 }
 
 .hero-actions {
@@ -130,7 +136,7 @@ body {
   gap: 0.75rem;
 }
 
-/* Buttons (custom; در کنار بوت‌استرپ کار می‌کند) */
+/* Buttons – custom look, works with Bootstrap btns too */
 .btn-primary,
 .btn-secondary {
   display: inline-block;
@@ -144,12 +150,13 @@ body {
 }
 
 .btn-primary {
-  background-color: var(--accent);
-  color: #ffffff;
+  background: radial-gradient(circle at top left, #38bdf8, #0ea5e9);
+  color: #0b1120;
+  border-color: transparent;
 }
 
 .btn-primary:hover {
-  background-color: #1d4ed8;
+  filter: brightness(1.1);
 }
 
 .btn-secondary {
@@ -173,21 +180,25 @@ body {
 /* Cards */
 .skill-card,
 .project-card {
-  background-color: var(--bg-alt);
+  background: radial-gradient(circle at top left, #111827, #020617);
   border-radius: 0.75rem;
   padding: 1.25rem 1.5rem;
   border: 1px solid var(--border-subtle);
-  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease,
+    background 0.15s ease;
 }
 
 .skill-card:hover,
 .project-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.8);
+  border-color: rgba(34, 211, 238, 0.4);
 }
 
+/* Headings inside cards */
 .skill-card h3,
 .project-card h3 {
+  font-size: 1.1rem;
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
@@ -201,11 +212,12 @@ body {
 .skill-list li {
   margin-bottom: 0.25rem;
   font-size: 0.95rem;
+  color: var(--text-muted);
 }
 
 /* Projects */
 .project-tech {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
   margin-bottom: 0.5rem;
 }
@@ -239,11 +251,22 @@ body {
   font-size: 0.85rem;
   color: var(--text-muted);
 }
+/* Light theme override */
+.theme-light {
+  --bg: #f5f5f7;
+  --bg-alt: #ffffff;
+  --card-bg: #ffffff;
+  --text-main: #111827;
+  --text-muted: #4b5563;
+  --border-subtle: #e5e7eb;
+  --accent: #2563eb;
+  --accent-soft: #dbeafe;
+}
 
 /* Responsive */
 @media (min-width: 768px) {
   .hero h1 {
-    font-size: 2.6rem;
+    font-size: 2.8rem;
   }
 
   .hero-content {
