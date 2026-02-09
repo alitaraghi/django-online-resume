@@ -57,46 +57,38 @@ Resume{% endblock %} {% block content %}
     <h2 class="mb-3">Projects</h2>
     <div class="row g-3">
       {% for project in projects %}
-      <div class="col-md-4">
-        <article class="project-card h-100 d-flex flex-column">
-          <h3 class="h5">{{ project.title }}</h3>
-          <p class="project-description mb-2">{{ project.description }}</p>
-          <p class="project-tech mb-3">Tech: {{ project.tech_stack }}</p>
-          <div
-            class="mt-auto d-flex flex-wrap gap-2 justify-content-between align-items-center"
-          >
-            <span class="badge bg-light text-primary border border-primary">
-              {% if forloop.counter == 1 %}Live now{% else %}In progress{% endif
-              %}
-            </span>
-            <div class="d-flex flex-wrap gap-2">
-              {% if project.github_url %}
-              <a
-                href="{{ project.github_url }}"
-                class="project-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-              {% endif %} {% if project.live_url %}
-              <a
-                href="{{ project.live_url }}"
-                class="project-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Live
-              </a>
-              {% endif %}
+        <div class="col-md-4">
+          <article class="project-card h-100 d-flex flex-column">
+            <h3 class="h5">{{ project.title }}</h3>
+            <p class="project-description mb-2">
+              {{ project.description }}
+            </p>
+            <p class="project-tech mb-3">Tech: {{ project.tech_stack }}</p>
+
+            <div class="mt-auto d-flex flex-wrap gap-2 justify-content-between align-items-center">
+              <span class="badge bg-light text-primary border border-primary">
+                {% if forloop.counter == 1 %}Live now{% else %}In progress{% endif %}
+              </span>
+              <div class="d-flex flex-wrap gap-2">
+                {% if project.github_url %}
+                  <a href="{{ project.github_url }}" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                  </a>
+                {% endif %}
+                {% if project.live_url %}
+                  <a href="{{ project.live_url }}" class="btn btn-sm btn-primary" target="_blank" rel="noopener noreferrer">
+                    Live
+                  </a>
+                {% endif %}
+              </div>
             </div>
-          </div>
-        </article>
-      </div>
+          </article>
+        </div>
       {% endfor %}
     </div>
   </div>
 </section>
+
 <section id="contact" class="section section-alt">
   <div class="container">
     <h2>Contact</h2>
