@@ -64,7 +64,7 @@ body {
 .nav a {
   margin-left: 1rem;
   text-decoration: none;
-  color: var(--text-muted);
+  color: var(--text-main);
   font-size: 0.95rem;
 }
 
@@ -127,7 +127,7 @@ body {
 .hero-text {
   max-width: 36rem;
   margin-bottom: 1.5rem;
-  color: var(--text-muted);
+  color: var(--text-main);
 }
 
 .hero-actions {
@@ -135,10 +135,6 @@ body {
   flex-wrap: wrap;
   gap: 0.75rem;
 }
-
-/* Buttons – custom look, works with Bootstrap btns too */
-
-
 /* Grids */
 .skills-grid,
 .projects-grid {
@@ -171,6 +167,7 @@ body {
   font-size: 1.1rem;
   margin-top: 0;
   margin-bottom: 0.5rem;
+  color: var(--text-main);
 }
 
 /* Skills list */
@@ -182,13 +179,13 @@ body {
 .skill-list li {
   margin-bottom: 0.25rem;
   font-size: 0.95rem;
-  color: var(--text-muted);
+  color: var(--text-main);
 }
 
 /* Projects */
 .project-tech {
   font-size: 0.95rem;
-  color: var(--text-muted);
+  color: var(--text-main);
   margin-bottom: 0.5rem;
 }
 
