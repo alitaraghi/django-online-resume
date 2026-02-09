@@ -3,26 +3,27 @@
 {% block title %}{{ name }} | Online Resume{% endblock %}
 
 {% block content %}
-  <section class="hero">
-    <div class="container hero-content">
-      <div>
-        <p class="hero-tagline">Python Developer</p>
-        <h1>{{ name }}</h1>
-        <p class="hero-subtitle">
-          {{ title }}
-        </p>
-        <p class="hero-text">
-          I am a Python developer with a growing interest in web development and AI.
-          I have experience with HTML, CSS, basic JavaScript, Django setup, and web scraping using Selenium.
-          I am actively building real-world projects to strengthen my skills and create value for future teams I work with.
-        </p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn-primary">View Projects</a>
-          <a href="#contact" class="btn-secondary">Contact Me</a>
-        </div>
+  <section class="hero py-5">
+  <div class="container hero-content">
+    <div>
+      <p class="hero-tagline text-uppercase fw-semibold text-primary">Python Developer</p>
+      <h1 class="mb-2">{{ name }}</h1>
+      <p class="hero-subtitle mb-3">
+        {{ title }}
+      </p>
+      <p class="hero-text mb-4">
+        I am a Python and Django developer with experience in building real‑world web applications,
+        automation scripts, and AI‑powered tools. I enjoy turning ideas into working software and I am
+        actively growing my skills through practical projects.
+      </p>
+      <div class="hero-actions d-flex flex-wrap gap-2">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-outline-primary">Contact Me</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <section id="about" class="section">
     <div class="container">
@@ -59,31 +60,42 @@
 </section>
 
 
-  <section id="projects" class="section">
+<section id="projects" class="section">
   <div class="container">
-    <h2>Projects</h2>
-    <div class="projects-grid">
+    <h2 class="mb-3">Projects</h2>
+    <div class="row g-3">
       {% for project in projects %}
-        <article class="project-card">
-          <h3>{{ project.title }}</h3>
-          <p>{{ project.description }}</p>
-          <p class="project-tech">Tech: {{ project.tech_stack }}</p>
-          {% if project.github_url %}
-            <a href="{{ project.github_url }}" class="project-link" target="_blank" rel="noopener noreferrer">
-              GitHub
-            </a>
-          {% endif %}
-          {% if project.live_url %}
-            {% if project.github_url %} | {% endif %}
-            <a href="{{ project.live_url }}" class="project-link" target="_blank" rel="noopener noreferrer">
-              Live
-            </a>
-          {% endif %}
-        </article>
+        <div class="col-md-4">
+          <article class="project-card h-100 d-flex flex-column">
+            <h3 class="h5">{{ project.title }}</h3>
+            <p class="project-description mb-2">
+              {{ project.description }}
+            </p>
+            <p class="project-tech mb-3">Tech: {{ project.tech_stack }}</p>
+            <div class="mt-auto d-flex flex-wrap gap-2 justify-content-between align-items-center">
+              <span class="badge bg-light text-primary border border-primary">
+                {% if forloop.counter == 1 %}Live now{% else %}In progress{% endif %}
+              </span>
+              <div class="d-flex flex-wrap gap-2">
+                {% if project.github_url %}
+                  <a href="{{ project.github_url }}" class="project-link" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                  </a>
+                {% endif %}
+                {% if project.live_url %}
+                  <a href="{{ project.live_url }}" class="project-link" target="_blank" rel="noopener noreferrer">
+                    Live
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          </article>
+        </div>
       {% endfor %}
     </div>
   </div>
 </section>
+
 
   <section id="contact" class="section section-alt">
     <div class="container">
